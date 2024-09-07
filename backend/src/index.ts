@@ -8,6 +8,7 @@ import userRouter from "./user";
 import fileRouter from "./file";
 import emailRouter from "./email";
 
+
 const app = express();
 const address = "http://localhost";
 const port = 8888;
@@ -37,6 +38,10 @@ app.all("*", (req, res, next) => {
 });
 
 app.use(express.json());
+
+app.get('/', (req, res) => {
+  res.send('Hello, World!');
+});
 
 app.use("/user", userRouter);
 app.use("/file", fileRouter);
