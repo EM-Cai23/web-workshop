@@ -1,7 +1,6 @@
 import React from 'react';
 import { Form, Input, Button, message } from 'antd';
 import axios from 'axios';
-import { useLocation } from 'react-router-dom';
 
 const ResetPasswordPage: React.FC = () => {
   const onFinish = async (values: { token: any; password: any; }) => {
