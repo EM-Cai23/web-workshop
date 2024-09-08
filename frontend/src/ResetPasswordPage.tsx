@@ -4,8 +4,6 @@ import axios from 'axios';
 import { useLocation } from 'react-router-dom';
 
 const ResetPasswordPage: React.FC = () => {
-  const location = useLocation();
-
   const onFinish = async (values: { token: any; password: any; }) => {
     try {
       await axios.post(`${process.env.REACT_APP_BACKEND_URL}/user/change-password/action`, 
