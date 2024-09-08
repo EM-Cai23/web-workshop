@@ -5,7 +5,6 @@ import { useLocation } from 'react-router-dom';
 
 const ResetPasswordPage: React.FC = () => {
   const location = useLocation();
-  const query = new URLSearchParams(location.search);
 
   const onFinish = async (values: { token: any; password: any; }) => {
     try {
