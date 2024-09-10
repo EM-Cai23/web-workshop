@@ -24,7 +24,7 @@ _需求中的所有“不可分拆物”，及它们的属性。_
 
 - 用户（用户名、密码）
 - 会议（名称、介绍、邀请码、创建时间）
-- 消息（消息体，创建时间）
+- 消息（消息体，创建时间，回复内容）
 
 ### 2.2 标识关系（Relation）
 
@@ -50,6 +50,7 @@ erDiagram
 	message{
 		String content
 		Time created_at
+		String reply_to
 	}
 	user }|--o{ room : join
 	user ||--o{ message : send
@@ -83,5 +84,6 @@ _一般来说，一个实体对应一张表，多对多的关系也可对应一�
 |           | room_uuid   | uuid      |      | room.uuid |
 |           | content     | text      |      |           |
 |           | created_at  | timestamp |      |           |
+|           | reply_to    | uuid      |      |
 
 注：由于使用的是 PostgreSQL，其`text`类型指长度可变的字符串，与其他数据库可能不同（[PostgreSQL: Documentation: 16: Chapter 8. Data Types](https://www.postgresql.org/docs/current/datatype.html)）
