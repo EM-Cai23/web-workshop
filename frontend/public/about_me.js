@@ -9,7 +9,7 @@ function toggleTheme(){
     }
 }
 
-const url = 'https://api.github.com/users/EM-Cai23/repos';
+const url = 'https://api.github.com/users/JamesCai-QwQ/repos';
 async function fetchGithubRepo(){
     try{
         const response = await fetch(url);
